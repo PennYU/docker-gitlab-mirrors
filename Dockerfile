@@ -44,7 +44,7 @@ COPY assets ${GITLAB_MIRROR_ASSETS}
 COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 755 /sbin/entrypoint.sh
 
-VOLUME ["${GITLAB_MIRROR_REPO_DIR}", "${GITLAB_MIRROR_HOME}", "/etc/ssl/certs"]
+VOLUME ["${GITLAB_MIRROR_REPO_DIR}", "${GITLAB_MIRROR_HOME}", "/etc/ssl/certs", "/etc/ssh"]
 WORKDIR ${GITLAB_MIRROR_HOME}
 ENTRYPOINT ["/sbin/entrypoint.sh"]
 CMD ["help"]
